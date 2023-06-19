@@ -28,28 +28,28 @@ function App() {
   }, [currentTime]);
 
 
-  const playVid = () => {
-    videoRef.current.play();
-  };
-  //pause
-  const pauseVid = () => {
-    videoRef.current.pause();
-  };
-  //중단하고 처음으로 돌아가기
-  const stopVid = () => {
-    videoRef.current.pause();
-    setCurrentTime(0);
-    videoRef.current.load();
-  };
+  // const playVid = () => {
+  //   videoRef.current.play();
+  // };
+  // //pause
+  // const pauseVid = () => {
+  //   videoRef.current.pause();
+  // };
+  // //중단하고 처음으로 돌아가기
+  // const stopVid = () => {
+  //   videoRef.current.pause();
+  //   setCurrentTime(0);
+  //   videoRef.current.load();
+  // };
 
   return (
     <div className="App">
       <h1>React Video Player</h1>
       <Video videoRef={videoRef}/>
       <TimeInfo currentTime={currentTime} duration={duration}/>
-      <BtnGroup playVid={playVid} pauseVid={pauseVid} stopVid={stopVid}/>
+      <BtnGroup videoRef={videoRef}  setCurrentTime={setCurrentTime} />
     </div>
   );
 }
-
+// playVid={playVid} pauseVid={pauseVid} stopVid={stopVid}
 export default App;
